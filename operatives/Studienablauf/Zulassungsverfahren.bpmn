@@ -113,8 +113,8 @@
             <bpmn2:flowNodeRef>UserTask_7</bpmn2:flowNodeRef>
             <bpmn2:flowNodeRef>SendTask_3</bpmn2:flowNodeRef>
             <bpmn2:flowNodeRef>SendTask_4</bpmn2:flowNodeRef>
-            <bpmn2:flowNodeRef>ChoreographyTask_1</bpmn2:flowNodeRef>
-            <bpmn2:flowNodeRef>ChoreographyTask_2</bpmn2:flowNodeRef>
+            <!--  <bpmn2:flowNodeRef>ChoreographyTask_1</bpmn2:flowNodeRef>
+            <bpmn2:flowNodeRef>ChoreographyTask_2</bpmn2:flowNodeRef>//-->
             <bpmn2:flowNodeRef>IntermediateCatchEvent_6</bpmn2:flowNodeRef>
             <bpmn2:flowNodeRef>UserTask_8</bpmn2:flowNodeRef>
           </bpmn2:lane>
@@ -302,8 +302,8 @@
       <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_37</bpmn2:outgoing>
     </bpmn2:sendTask>
-    <bpmn2:choreographyTask id="ChoreographyTask_1"/>
-    <bpmn2:choreographyTask id="ChoreographyTask_2"/>
+    <!--<bpmn2:choreographyTask id="ChoreographyTask_1"/>
+    <bpmn2:choreographyTask id="ChoreographyTask_2"/>//-->
     <bpmn2:sequenceFlow id="SequenceFlow_37" name="" sourceRef="Task_4" targetRef="IntermediateCatchEvent_6"/>
     <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_6">
       <bpmn2:incoming>SequenceFlow_37</bpmn2:incoming>
