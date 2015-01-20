@@ -11,7 +11,7 @@
       <bpmn2:timerEventDefinition id="_TimerEventDefinition_5"/>
     </bpmn2:intermediateCatchEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_1" name="" sourceRef="IntermediateCatchEvent_1" targetRef="Task_1"/>
-    <bpmn2:scriptTask id="Task_1" name="Datenbank synchronisieren">
+    <bpmn2:serviceTask id="Task_1" name="Datenbank synchronisieren">
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_3">
@@ -23,7 +23,7 @@
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_5">
         <bpmn2:targetRef>_DataStoreReference_13</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-    </bpmn2:scriptTask>
+    </bpmn2:serviceTask>
     <bpmn2:dataStoreReference id="_DataStoreReference_7" name="CRM&#xD;&#xA;WINGS" dataStoreRef="DataStore_5"/>
     <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="Task_1" targetRef="IntermediateCatchEvent_1"/>
   </bpmn2:process>
