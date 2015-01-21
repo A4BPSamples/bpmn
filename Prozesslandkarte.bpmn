@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="_nMjsYKFwEeSm5utkXsUVEQ" exporter="camunda modeler" exporterVersion="2.7.0" targetNamespace="http://activiti.org/bpmn">
+  <bpmn2:collaboration id="Prozesslandkarte" name="Prozesslandkarte">
+    <bpmn2:participant id="Managementprozesse" name="Managementprozesse" processRef="Pool_Management"/>
+    <bpmn2:participant id="Kernprozesse" name="Kernprozesse" processRef="Pool_Kern"/>
+    <bpmn2:participant id="Supportprozesse" name="Supportprozesse" processRef="Pool_Support"/>
+  </bpmn2:collaboration>
+  <bpmn2:process id="Pool_Management" name="Managementprozesse" isExecutable="false"/>
+  <bpmn2:process id="Pool_Kern" name="Kernprozesse" isExecutable="false"/>
+  <bpmn2:process id="Pool_Support" name="Supportprozesse" isExecutable="false"/>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_4">
+    <bpmndi:BPMNPlane id="BPMNPlane_4" bpmnElement="Prozesslandkarte">
+      <bpmndi:BPMNShape id="_BPMNShape_Participant_31" bpmnElement="Managementprozesse" isHorizontal="true">
+        <dc:Bounds height="229.0" width="1200.0" x="36.0" y="48.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Participant_32" bpmnElement="Kernprozesse" isHorizontal="true">
+        <dc:Bounds height="325.0" width="1200.0" x="36.0" y="300.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Participant_33" bpmnElement="Supportprozesse" isHorizontal="true">
+        <dc:Bounds height="229.0" width="1200.0" x="36.0" y="648.0"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

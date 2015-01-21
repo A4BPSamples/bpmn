@@ -38,7 +38,6 @@
     <bpmn2:dataStoreReference id="_DataStoreReference_9" name="CRM" dataStoreRef="DataStore_2"/>
     <bpmn2:dataStoreReference id="_DataStoreReference_10" name="ZUL" dataStoreRef="DataStore_3"/>
     <bpmn2:userTask id="Task_5" name="Bewerberdaten erfassen">
-      <bpmn2:incoming>SequenceFlow_19</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_20</bpmn2:outgoing>
       <bpmn2:dataInputAssociation id="DataInputAssociation_3">
@@ -58,6 +57,7 @@
     </bpmn2:manualTask>
     <bpmn2:sequenceFlow id="SequenceFlow_21" name="" sourceRef="Task_9" targetRef="IntermediateCatchEvent_4"/>
     <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_2" name="auf Synchronisation&#xD;&#xA;warten">
+      <bpmn2:incoming>SequenceFlow_19</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
       <bpmn2:timerEventDefinition id="_TimerEventDefinition_10"/>
     </bpmn2:intermediateCatchEvent>
@@ -85,7 +85,7 @@
       <bpmn2:outgoing>SequenceFlow_19</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_13" name="" sourceRef="ParallelGateway_1" targetRef="SendTask_1"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_19" name="" sourceRef="ParallelGateway_1" targetRef="Task_5"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_19" name="" sourceRef="ParallelGateway_1" targetRef="IntermediateCatchEvent_2"/>
     <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_1" name="Eingang&#xD;&#xA;Bewerbungsunterlagen">
       <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
       <bpmn2:messageEventDefinition id="_MessageEventDefinition_21"/>
@@ -200,6 +200,9 @@ ZB = Zugangsberechtigung]]></bpmn2:text>
     <bpmn2:sequenceFlow id="SequenceFlow_40" name="" sourceRef="Task_17" targetRef="EndEvent_4"/>
   </bpmn2:process>
   <bpmn2:dataStore id="DataStore_3" name="Data Store 3"/>
+  <bpmn2:dataStore id="DataStore_4" name="Data Store 4"/>
+  <bpmn2:dataStore id="DataStore_5" name="Data Store 5"/>
+  <bpmn2:dataStore id="DataStore_6" name="Data Store 6"/>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="_Collaboration_11">
       <bpmndi:BPMNShape id="_BPMNShape_IntermediateCatchEvent_31" bpmnElement="IntermediateCatchEvent_1">
@@ -215,26 +218,26 @@ ZB = Zugangsberechtigung]]></bpmn2:text>
         <dc:Bounds height="80.0" width="100.0" x="325.0" y="425.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_DataStoreReference_17" bpmnElement="_DataStoreReference_8">
-        <dc:Bounds height="50.0" width="50.0" x="350.0" y="143.0"/>
+        <dc:Bounds height="50.0" width="50.0" x="350.0" y="132.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="22.0" width="35.0" x="359.0" y="167.0"/>
+          <dc:Bounds height="22.0" width="35.0" x="359.0" y="156.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_TextAnnotation_14" bpmnElement="TextAnnotation_1">
         <dc:Bounds height="62.0" width="114.0" x="173.0" y="125.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_TextAnnotation_15" bpmnElement="TextAnnotation_2">
-        <dc:Bounds height="46.0" width="115.0" x="97.0" y="476.0"/>
+        <dc:Bounds height="46.0" width="115.0" x="60.0" y="468.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_Association_2" bpmnElement="Association_2" sourceElement="_BPMNShape_TextAnnotation_15" targetElement="_BPMNShape_Task_39">
-        <di:waypoint xsi:type="dc:Point" x="211.0" y="490.0"/>
-        <di:waypoint xsi:type="dc:Point" x="325.0" y="473.0"/>
+        <di:waypoint xsi:type="dc:Point" x="174.0" y="485.0"/>
+        <di:waypoint xsi:type="dc:Point" x="325.0" y="470.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_Task_41" bpmnElement="Task_3">
         <dc:Bounds height="80.0" width="100.0" x="325.0" y="226.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_DataInputAssociation_1" bpmnElement="DataInputAssociation_1" sourceElement="_BPMNShape_DataStoreReference_17" targetElement="_BPMNShape_Task_41">
-        <di:waypoint xsi:type="dc:Point" x="375.0" y="193.0"/>
+        <di:waypoint xsi:type="dc:Point" x="375.0" y="182.0"/>
         <di:waypoint xsi:type="dc:Point" x="375.0" y="226.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_DataStoreReference_18" bpmnElement="_DataStoreReference_9">
@@ -351,13 +354,13 @@ ZB = Zugangsberechtigung]]></bpmn2:text>
           <dc:Bounds height="6.0" width="6.0" x="693.0" y="163.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_19" bpmnElement="SequenceFlow_19" sourceElement="_BPMNShape_ParallelGateway_4" targetElement="_BPMNShape_Task_43">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_19" bpmnElement="SequenceFlow_19" sourceElement="_BPMNShape_ParallelGateway_4" targetElement="_BPMNShape_IntermediateCatchEvent_38">
         <di:waypoint xsi:type="dc:Point" x="606.0" y="290.0"/>
-        <di:waypoint xsi:type="dc:Point" x="606.0" y="561.0"/>
-        <di:waypoint xsi:type="dc:Point" x="266.0" y="561.0"/>
-        <di:waypoint xsi:type="dc:Point" x="266.0" y="600.0"/>
+        <di:waypoint xsi:type="dc:Point" x="604.0" y="513.0"/>
+        <di:waypoint xsi:type="dc:Point" x="124.0" y="512.0"/>
+        <di:waypoint xsi:type="dc:Point" x="126.0" y="622.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="6.0" width="6.0" x="494.0" y="561.0"/>
+          <dc:Bounds height="6.0" width="6.0" x="449.0" y="553.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_DataStoreReference_19" bpmnElement="_DataStoreReference_10">
@@ -572,7 +575,7 @@ ZB = Zugangsberechtigung]]></bpmn2:text>
       <bpmndi:BPMNShape id="_BPMNShape_IntermediateCatchEvent_38" bpmnElement="IntermediateCatchEvent_2">
         <dc:Bounds height="36.0" width="36.0" x="108.0" y="622.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="38.0" width="130.0" x="61.0" y="576.0"/>
+          <dc:Bounds height="38.0" width="130.0" x="61.0" y="657.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_BPMNShape_IntermediateCatchEvent_38" targetElement="_BPMNShape_Task_43">
