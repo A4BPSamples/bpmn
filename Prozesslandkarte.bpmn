@@ -1,23 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="_nMjsYKFwEeSm5utkXsUVEQ" exporter="camunda modeler" exporterVersion="2.7.0" targetNamespace="http://activiti.org/bpmn">
   <bpmn2:collaboration id="Prozesslandkarte" name="Prozesslandkarte">
-    <bpmn2:participant id="Managementprozesse" name="Managementprozesse" processRef="Pool_Management"/>
-    <bpmn2:participant id="Kernprozesse" name="Kernprozesse" processRef="Pool_Kern"/>
-    <bpmn2:participant id="Supportprozesse" name="Supportprozesse" processRef="Pool_Support"/>
+    <bpmn2:participant id="Pool.Managementprozesse" name="Management" processRef="Process.Management"/>
+    <bpmn2:participant id="Pool.Kernprozesse" name="Kern" processRef="Process.Core"/>
+    <bpmn2:participant id="Pool.Supportprozesse" name="Support" processRef="Process.Support"/>
   </bpmn2:collaboration>
-  <bpmn2:process id="Pool_Management" name="Managementprozesse" isExecutable="false"/>
-  <bpmn2:process id="Pool_Kern" name="Kernprozesse" isExecutable="false"/>
-  <bpmn2:process id="Pool_Support" name="Supportprozesse" isExecutable="false"/>
+  <bpmn2:process id="Process.Management" name="Managementprozess" isExecutable="false">
+    <bpmn2:task id="Task.Kooperationen" name="Kooperationen und Partner"/>
+    <bpmn2:task id="Task.QualiMgmt" name="Qualitätsmanagement"/>
+    <bpmn2:task id="Task.Strategy" name="Strategische Ausrichtung"/>
+    <bpmn2:task id="Task.Personalplanung" name="Personalplanung"/>
+    <bpmn2:task id="Task.Finanzplanung" name="Finanzplanung"/>
+  </bpmn2:process>
+  <bpmn2:process id="Process.Core" name="Kernprozess" isExecutable="false">
+    <bpmn2:task id="Task.SLC" name="Student Life Cycle"/>
+    <bpmn2:task id="Task.Studium" name="Studium planen &amp; durchführen"/>
+    <bpmn2:task id="Task.Weiterbildung" name="Weiterbildung planen &amp; durchführen"/>
+    <bpmn2:task id="Task.Studienberatung" name="Studienberatung"/>
+    <bpmn2:task id="Task.Controlling" name="Controlling"/>
+  </bpmn2:process>
+  <bpmn2:process id="Process.Support" name="Supportprozess" isExecutable="false">
+    <bpmn2:task id="Task.Marketing" name="Marketing"/>
+    <bpmn2:task id="Task.GebaeudeMgmt" name="Gebäudemanagement"/>
+    <bpmn2:task id="Task.Infrastructure" name="Technische Infrastruktur bereitstellen"/>
+    <bpmn2:task id="Task.Buchhaltung" name="Finanzbuchhaltung"/>
+    <bpmn2:task id="Task.Personalmanagement" name="Personalmanagement"/>
+  </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_4">
     <bpmndi:BPMNPlane id="BPMNPlane_4" bpmnElement="Prozesslandkarte">
-      <bpmndi:BPMNShape id="_BPMNShape_Participant_31" bpmnElement="Managementprozesse" isHorizontal="true">
+      <bpmndi:BPMNShape id="_BPMNShape_Participant_31" bpmnElement="Pool.Managementprozesse" isHorizontal="true">
         <dc:Bounds height="229.0" width="1200.0" x="36.0" y="48.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_Participant_32" bpmnElement="Kernprozesse" isHorizontal="true">
+      <bpmndi:BPMNShape id="_BPMNShape_Participant_32" bpmnElement="Pool.Kernprozesse" isHorizontal="true">
         <dc:Bounds height="325.0" width="1200.0" x="36.0" y="300.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_Participant_33" bpmnElement="Supportprozesse" isHorizontal="true">
+      <bpmndi:BPMNShape id="_BPMNShape_Participant_33" bpmnElement="Pool.Supportprozesse" isHorizontal="true">
         <dc:Bounds height="229.0" width="1200.0" x="36.0" y="648.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_80" bpmnElement="Task.SLC">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="324.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_81" bpmnElement="Task.Marketing">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="672.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_82" bpmnElement="Task.Personalmanagement">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="672.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_83" bpmnElement="Task.Studium">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="420.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_84" bpmnElement="Task.Weiterbildung">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="516.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_85" bpmnElement="Task.Studienberatung">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="324.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_86" bpmnElement="Task.GebaeudeMgmt">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="768.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_87" bpmnElement="Task.Infrastructure">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="672.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_88" bpmnElement="Task.Kooperationen">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="168.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_89" bpmnElement="Task.QualiMgmt">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="72.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_90" bpmnElement="Task.Strategy">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="168.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_91" bpmnElement="Task.Controlling">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="420.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_92" bpmnElement="Task.Buchhaltung">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="768.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_93" bpmnElement="Task.Personalplanung">
+        <dc:Bounds height="80.0" width="100.0" x="96.0" y="72.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_94" bpmnElement="Task.Finanzplanung">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="72.0"/>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
