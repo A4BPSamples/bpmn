@@ -11,13 +11,13 @@
     <bpmn2:task id="Task.Strategy" name="Strategische Ausrichtung"/>
     <bpmn2:task id="Task.Personalplanung" name="Personalplanung"/>
     <bpmn2:task id="Task.Finanzplanung" name="Finanzplanung"/>
+    <bpmn2:task id="Task.Controlling" name="Controlling"/>
   </bpmn2:process>
   <bpmn2:process id="Process.Core" name="Kernprozess" isExecutable="false">
     <bpmn2:task id="Task.SLC" name="Student Life Cycle"/>
     <bpmn2:task id="Task.Studium" name="Studium planen &amp; durchführen"/>
     <bpmn2:task id="Task.Weiterbildung" name="Weiterbildung planen &amp; durchführen"/>
     <bpmn2:task id="Task.Studienberatung" name="Studienberatung"/>
-    <bpmn2:task id="Task.Controlling" name="Controlling"/>
   </bpmn2:process>
   <bpmn2:process id="Process.Support" name="Supportprozess" isExecutable="false">
     <bpmn2:task id="Task.Marketing" name="Marketing"/>
@@ -71,7 +71,7 @@
         <dc:Bounds height="80.0" width="100.0" x="216.0" y="168.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_Task_91" bpmnElement="Task.Controlling">
-        <dc:Bounds height="80.0" width="100.0" x="216.0" y="420.0"/>
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="168.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_Task_92" bpmnElement="Task.Buchhaltung">
         <dc:Bounds height="80.0" width="100.0" x="216.0" y="768.0"/>
