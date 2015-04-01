@@ -10,6 +10,10 @@
     <bpmn2:messageFlow id="MessageFlow_6" name="" sourceRef="SendTask_1" targetRef="IntermediateCatchEvent_2"/>
     <bpmn2:messageFlow id="MessageFlow_7" name="" sourceRef="SendTask_1" targetRef="IntermediateCatchEvent_3"/>
     <bpmn2:messageFlow id="MessageFlow_8" name="" sourceRef="SendTask_1" targetRef="IntermediateCatchEvent_4"/>
+    <bpmn2:messageFlow id="MessageFlow_10" name="" sourceRef="SendTask_2" targetRef="ReceiveTask_5"/>
+    <bpmn2:messageFlow id="MessageFlow_11" name="" sourceRef="SendTask_3" targetRef="ReceiveTask_6"/>
+    <bpmn2:messageFlow id="MessageFlow_12" name="" sourceRef="SendTask_4" targetRef="ReceiveTask_7"/>
+    <bpmn2:messageFlow id="MessageFlow_13" name="" sourceRef="SendTask_5" targetRef="ReceiveTask_8"/>
   </bpmn2:collaboration>
   <bpmn2:process id="Process_1" isExecutable="false">
     <bpmn2:parallelGateway id="ParallelGateway_1">
@@ -81,7 +85,28 @@
       <bpmn2:incoming>SequenceFlow_17</bpmn2:incoming>
     </bpmn2:sendTask>
     <bpmn2:sequenceFlow id="SequenceFlow_17" name="" sourceRef="ParallelGateway_2" targetRef="SendTask_1"/>
-    <bpmn2:receiveTask id="ReceiveTask_5" name="Stellungnahmen erhalten"/>
+    <bpmn2:receiveTask id="ReceiveTask_5" name="Stellungnahmen erhalten">
+      <bpmn2:outgoing>SequenceFlow_30</bpmn2:outgoing>
+    </bpmn2:receiveTask>
+    <bpmn2:receiveTask id="ReceiveTask_6">
+      <bpmn2:outgoing>SequenceFlow_31</bpmn2:outgoing>
+    </bpmn2:receiveTask>
+    <bpmn2:receiveTask id="ReceiveTask_7">
+      <bpmn2:outgoing>SequenceFlow_32</bpmn2:outgoing>
+    </bpmn2:receiveTask>
+    <bpmn2:receiveTask id="ReceiveTask_8">
+      <bpmn2:outgoing>SequenceFlow_33</bpmn2:outgoing>
+    </bpmn2:receiveTask>
+    <bpmn2:parallelGateway id="ParallelGateway_4">
+      <bpmn2:incoming>SequenceFlow_30</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_31</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_32</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_33</bpmn2:incoming>
+    </bpmn2:parallelGateway>
+    <bpmn2:sequenceFlow id="SequenceFlow_30" name="" sourceRef="ReceiveTask_5" targetRef="ParallelGateway_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_31" name="" sourceRef="ReceiveTask_6" targetRef="ParallelGateway_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_32" name="" sourceRef="ReceiveTask_7" targetRef="ParallelGateway_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_33" name="" sourceRef="ReceiveTask_8" targetRef="ParallelGateway_4"/>
   </bpmn2:process>
   <bpmn2:process id="Process_2" isExecutable="false">
     <bpmn2:userTask id="UserTask_7" name="Stellungnahme abgeben">
@@ -426,7 +451,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_10" bpmnElement="ReceiveTask_5">
-        <dc:Bounds height="80.0" width="100.0" x="1428.0" y="510.0"/>
+        <dc:Bounds height="80.0" width="100.0" x="1284.0" y="498.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_SendTask_11" bpmnElement="SendTask_2">
         <dc:Bounds height="80.0" width="100.0" x="1284.0" y="649.0"/>
@@ -455,6 +480,74 @@
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_29" bpmnElement="SequenceFlow_29" sourceElement="_BPMNShape_UserTask_25" targetElement="_BPMNShape_SendTask_14">
         <di:waypoint xsi:type="dc:Point" x="1252.0" y="986.0"/>
         <di:waypoint xsi:type="dc:Point" x="1284.0" y="986.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_11" bpmnElement="ReceiveTask_6">
+        <dc:Bounds height="80.0" width="100.0" x="1404.0" y="498.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_12" bpmnElement="ReceiveTask_7">
+        <dc:Bounds height="80.0" width="100.0" x="1524.0" y="498.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_13" bpmnElement="ReceiveTask_8">
+        <dc:Bounds height="80.0" width="100.0" x="1644.0" y="498.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_10" bpmnElement="MessageFlow_10" sourceElement="_BPMNShape_SendTask_11" targetElement="_BPMNShape_ReceiveTask_10">
+        <di:waypoint xsi:type="dc:Point" x="1334.0" y="649.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1334.0" y="578.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_11" bpmnElement="MessageFlow_11" sourceElement="_BPMNShape_SendTask_12" targetElement="_BPMNShape_ReceiveTask_11">
+        <di:waypoint xsi:type="dc:Point" x="1384.0" y="787.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1453.0" y="786.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1454.0" y="578.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1450.0" y="710.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_12" bpmnElement="MessageFlow_12" sourceElement="_BPMNShape_SendTask_13" targetElement="_BPMNShape_ReceiveTask_12">
+        <di:waypoint xsi:type="dc:Point" x="1384.0" y="887.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1573.0" y="886.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1574.0" y="578.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1570.0" y="820.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_13" bpmnElement="MessageFlow_13" sourceElement="_BPMNShape_SendTask_14" targetElement="_BPMNShape_ReceiveTask_13">
+        <di:waypoint xsi:type="dc:Point" x="1384.0" y="986.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1693.0" y="986.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1694.0" y="578.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1690.0" y="931.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ParallelGateway_7" bpmnElement="ParallelGateway_4">
+        <dc:Bounds height="50.0" width="50.0" x="1487.0" y="335.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_30" bpmnElement="SequenceFlow_30" sourceElement="_BPMNShape_ReceiveTask_10" targetElement="_BPMNShape_ParallelGateway_7">
+        <di:waypoint xsi:type="dc:Point" x="1334.0" y="498.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1332.0" y="359.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1487.0" y="360.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1330.0" y="359.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_31" bpmnElement="SequenceFlow_31" sourceElement="_BPMNShape_ReceiveTask_11" targetElement="_BPMNShape_ParallelGateway_7">
+        <di:waypoint xsi:type="dc:Point" x="1454.0" y="498.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1454.0" y="442.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1512.0" y="442.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1512.0" y="385.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_32" bpmnElement="SequenceFlow_32" sourceElement="_BPMNShape_ReceiveTask_12" targetElement="_BPMNShape_ParallelGateway_7">
+        <di:waypoint xsi:type="dc:Point" x="1574.0" y="498.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1574.0" y="442.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1512.0" y="442.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1512.0" y="385.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_33" bpmnElement="SequenceFlow_33" sourceElement="_BPMNShape_ReceiveTask_13" targetElement="_BPMNShape_ParallelGateway_7">
+        <di:waypoint xsi:type="dc:Point" x="1694.0" y="498.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1692.0" y="359.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1537.0" y="360.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1686.0" y="359.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
